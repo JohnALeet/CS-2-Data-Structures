@@ -12,3 +12,11 @@ I worked with tutors to get this far, I'm not sure if I'll be able to get it all
 I learned a lot, though. It made me think about passing information through parameters & the heap a lot differently, as well as how I might go about using structs in the future. I found the layout of the program's information difficult to track, which I think was the intent. It was fun working with all the different nested loops in the functions, but it was also quite difficult.
 
 As of right now, I am still trying to figure out just how the hell to handle cellState and numNeighbors.
+
+Name HW1 - Classes Foundations
+Date: 02/23/2026
+Grade: 90/100
+This assignment was pretty straight-forward. You did a lot of this in class. I had to look up some file I/O syntax, but nothing here seemed too scary yet.
+
+In my SWClass.h I have a "void" function for fridayCatShirt, I intend to make this a kind of "OP" item at some point. I think maybe I'll add items in
+vectors later on. I still haven't gotten my GitHub stuff figured out.
