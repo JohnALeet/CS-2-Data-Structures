@@ -13,10 +13,18 @@ I learned a lot, though. It made me think about passing information through para
 
 As of right now, I am still trying to figure out just how the hell to handle cellState and numNeighbors.
 
-Name HW1 - Classes Foundations
+Name: HW1 - Classes Foundations
 Date: 02/23/2026
 Grade: 90/100
+
+Captain's log: 
 This assignment was pretty straight-forward. You did a lot of this in class. I had to look up some file I/O syntax, but nothing here seemed too scary yet.
 
 In my SWClass.h I have a "void" function for fridayCatShirt, I intend to make this a kind of "OP" item at some point. I think maybe I'll add items in
 vectors later on. I still haven't gotten my GitHub stuff figured out.
+
+Name: Lab 2 - Point
+Star Date: 02/28/2026
+Grade: 90/100
+Captain's log: 
+This lab wasn't that bad at all. Nowhere near as difficult as lab 1. Once I got the for-loop in calcNearestPoint working, it was pretty much done from there. I wrote distPoints first, which helped me to think about the main loop better. My main loop probably could've been written better and cleaner, but she works.
