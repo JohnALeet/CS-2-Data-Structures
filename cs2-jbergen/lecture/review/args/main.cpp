@@ -40,11 +40,6 @@ int addNums(int n1, int n2)
     return n1 + n2;
 }
 
-float addNums(float, float)
-{
-    return 0.0f;
-}
-
 void test()
 {
     assert(addNums(42, 15) == 57);
