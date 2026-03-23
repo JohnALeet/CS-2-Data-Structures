@@ -28,3 +28,10 @@ Star Date: 02/28/2026
 Grade: 90/100
 Captain's log: 
 This lab wasn't that bad at all. Nowhere near as difficult as lab 1. Once I got the for-loop in calcNearestPoint working, it was pretty much done from there. I wrote distPoints first, which helped me to think about the main loop better. My main loop probably could've been written better and cleaner, but she works.
+
+Name HW2
+Star Date: 03/20/2026
+Grade: 90/100
+Captain's log: 
+This HW was pretty straight-forward. I used your code for Virtual Animal speaking as a rough skeleton for the layout of my code.
+I copied Mersenne Twister from Google. The homework said nothing about reading/writing to files anymore, so I scrapped that and removed <fstream>.

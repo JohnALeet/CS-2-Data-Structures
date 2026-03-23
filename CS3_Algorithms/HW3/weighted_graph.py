@@ -2,7 +2,7 @@ class Graph:
     def __init__(self):
     
         self.adjacency_list = {
-        "Cardassian Union"  :[("Romulan Empire", 42), ("Bajoran", 14)],
+        "Cardassian Union"  :[("Bajoran", 14),("Romulan Empire", 42) ],
         "Bajoran"  :[("Cardassian Union", 14), ("United Federation of Planets", 22),("Tholian Assembly", 80)],
         "United Federation of Planets" : [("Bajoran", 22),("Romulan Empire", 53),("Klingon Empire", 87)],
         "Romulan Empire" : [("Cardassian Union", 42),("Borg",33), ("United Federation of Planets", 53)],
