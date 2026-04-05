@@ -1,18 +1,20 @@
 #pragma once
 #include <string>
+#include <iostream>
 
+using namespace std;
 
 namespace starwars
 {
 
 class Character
 {
-    protected:
+protected:
     std::string name;
     int health;
     int attackPower;
 
-    public: 
+public: 
     Character(std::string para = "The Anchorman: Jeremy Bergendy", int helf = 100, int atk = 50): 
         name(para), health(helf), attackPower(atk){}
     
@@ -32,31 +34,51 @@ class Character
         if (health < 0) health =0;
 
     }
+    
+    void saveToFile(std::string userFile);
+    void loadFromFile(std::string userFile);
+
+    Character operator+(int nums);
+    Character operator-(int nums);
+    Character operator*(int nums);
+    
+    friend std::ostream& operator<<(std::ostream& os, const Character& obj)
+    {
+        os << "Name: " << obj.name << endl;
+        os << "Health: " << obj.health << endl;
+        os << "Attack Power: " << obj.attackPower << endl;
+        return os;
+    };
 
 };
-    class Jedi : public Character
+class Jedi : public Character
     {
-        protected:
+protected:
         int forcePower;
 
         
-        public:
+public:
         Jedi(std::string para = "Jeremy 'Iceberg' Bergen", int helf = 100, int atk = 69, int powa = 69):
             Character(para, helf, atk), forcePower(powa) {}
 
 
 
 
-       virtual void takeDamage(int damage)
+virtual void takeDamage(int damage)
        {
         Character::takeDamage(damage);
        }
+       
+       bool operator==(const Jedi& rhs);
+       bool operator!=(const Jedi& rhs);
+       bool operator<(const Jedi& rhs);
+       bool operator>(const Jedi& rhs);
     
     };
 
 class Guardian : public Jedi
 {
-        public:
+public:
         Guardian(std::string temp = "Randy Savage"):
         Jedi(temp, 150, 70, 75){}
 
@@ -69,7 +91,7 @@ class Guardian : public Jedi
 
 class Consular : public Jedi
 {
-    public:
+public:
         Consular(std::string temp = "Bilbo Bergens"):
         Jedi(temp, 100, 50, 120){}
 
@@ -82,25 +104,30 @@ class Consular : public Jedi
 
 class Sith: public Character
 {
-    public:
+public:
     Sith(std::string temp = "hamBergenler", int helf = 120, int atk = 60):
         Character(temp, helf, atk){}
 
     void takeDamage(int damage) override
     {
         Character::takeDamage(damage);
-    };
+    }
+
+    bool operator==(const Sith& rhs);
+    bool operator!=(const Sith& rhs);
+    bool operator<(const Sith& rhs);
+    bool operator>(const Sith& rhs);
 };
 class Acolyte : public Sith
 {
-    public:
+public:
     Acolyte(std::string temp = "Beef Bergenoff"):
         Sith(temp, 80, 40){}
 };
 
 class Darth : public Sith
 {
-    public:
+public:
     Darth(std::string temp = "Bergenator"):
         Sith(temp, 200, 100){}
 };

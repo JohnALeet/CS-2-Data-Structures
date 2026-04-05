@@ -1,9 +1,34 @@
 #include <iostream>
 #include "SWClass.h"
 #include <random>
+#include <fstream>
 
 using namespace std;
 using namespace starwars;
+
+
+void Character::saveToFile(std::string userFile)
+{
+    std::ofstream fout(userFile);
+    if(!fout) return;
+
+    fout << name << "\n";
+    fout << health << "\n";
+    fout << attackPower << "\n";
+
+
+}
+
+void Character::loadFromFile(string userFile)
+{
+    ifstream fin(userFile);
+    if (!fin) return; //Base case!
+
+    getline(fin, name);
+    fin >> health;
+    fin >> attackPower;
+}
+
 
 int main()
 {
@@ -23,6 +48,7 @@ int main()
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(0, 1);
+    std::uniform_int_distribution<int> critHit(1,100);
 
     Character* select = nullptr;
     if (temp == 1) select = new Guardian(name);
@@ -37,7 +63,13 @@ int main()
 
     while ( select -> getHealth() > 0 && bad_guy -> getHealth() > 0 )
     {
-        int dmg = select ->attack();
+        int dmg = select -> attack();
+        int roll = critHit(gen);
+        if (roll <= 20)//This is just a critical hit I wanted to add to the combat loop.
+        {
+            dmg = dmg * 2;
+            cout << "CRITICAL HIT! It's super effective!\n";
+        }
         bad_guy->takeDamage(dmg);
 
         cout << select->getName() << " attacks for " << dmg << " damage!\n";
@@ -46,6 +78,12 @@ int main()
             break;
 
         int dmgBG = bad_guy->attack();
+        int roll2 = critHit(gen);
+        if (roll2 <= 10)//Bad guys don't get as much good luck.
+        {
+            dmgBG = dmgBG * 2;
+            cout << "CRITICAL HIT! It's super effective!\n";
+        }
         select->takeDamage(dmgBG);
 
         cout << bad_guy->getName() << " attacks and does " << dmgBG << " damage!" << "\n";

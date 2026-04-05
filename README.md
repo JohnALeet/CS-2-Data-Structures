@@ -34,4 +34,17 @@ Star Date: 03/20/2026
 Grade: 90/100
 Captain's log: 
 This HW was pretty straight-forward. I used your code for Virtual Animal speaking as a rough skeleton for the layout of my code.
-I copied Mersenne Twister from Google. The homework said nothing about reading/writing to files anymore, so I scrapped that and removed <fstream>.
+I copied Mersenne Twister from Google. Initially I deleted the Save/Load features because I didn't think they were going to be used going forward. They've been added back. I also added a critical hit RNG to the main combat loop because that seemed kinda cool.
+
+HW3
+Star Date: 04/02/2026
+Grade: 90/100
+Captain's Log:
+I added the overloading capabilities to the header file and main. I realize I probably should've had two .cpp files from the start. My main is a bit cluttered.
+I know that in the main combat loop, the stats aren't actually being modified, but the operators are still working as intended.
+
+Lab 3
+Star Date: 04/05/2026
+Grade: ??/100
+Captain's Log:
+This was actually harder than I thought it'd be. I wrote gcd first, which helped me to write simplify. I had fun with this one. 
