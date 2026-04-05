@@ -94,6 +94,8 @@ int main()
     if (select->getHealth()>0 && bad_guy->getHealth() <=0 ) cout << "\nYou won! The galaxy is safe once more.";
     else cout << "\nYou've lost. The Sith have triumphed on this day!";
 
+    select->saveToFile("StarWars_save.txt");
+
     delete select;
     delete bad_guy;
 
