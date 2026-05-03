@@ -81,7 +81,6 @@ def merge_Sort(nums):
     left = nums[:split]
     right = nums[split:]
     
-    #print(left, right)
 
     return left, right
 
