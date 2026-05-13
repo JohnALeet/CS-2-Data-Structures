@@ -48,3 +48,22 @@ Star Date: 04/05/2026
 Grade: ??/100
 Captain's Log:
 This was actually harder than I thought it'd be. I wrote gcd first, which helped me to write simplify. I had fun with this one. 
+
+
+Star Date: 05/11/2026
+Captain's Log:
+I haven't updated the ReadMe much at all. That's my fault. I should've been more on top of that. I feel like taking CS3 and CS2 at the same time was pretty challenging for me. I learned a lot, though. I'm actually surprised how much I learned. I had to study hard, review old lectures and really struggle. As of writing this, I am hammering away at the final, and I imagine you'll see a lot of D2L screenshots be submitted, soon, too.
+
+I went back and looked at Lab 1, which I thought to be exceptionally difficult the first time around. I was able to figure out how to write the updateCellState function to work, and I got the program running. It was a nice feeling to come back to that problem and understand it better. I needed to let it marinate in the background long enough that I could think about it cleaner. As of writing this, it's Monday at 11:30pm on Final's week. I've not slept since Sunday.
+
+This has been the most challenging semester I've ever had. But you were an awesome professor, and you renewed my love and interest in computer science. I loved your interactive teaching style and how humble you came off. I've dealt with professors before who seem to skirt questions or jump head first into jargon when I ask for simple concepts broken down, but you never did that. You seem to operate from the most basic principles of understanding, and it really helps an ape like me follow along.
+
+In regards to my final project, it doesn't look the best, but I'm proud of it. I really had to reason cleanly from the structure of describing objects. Looking back, I think I could've easily merged Character into Combatant, and just make player.h and enemy.h inherit from that. It would've been one fewer .h file in the final. I'd have like to added more rooms and better RNG, but I didn't give myself enough time. I also considered making the combat loop a "typing" game where you have to type out a word quickly, or lose health. That was the working idea, but, well.... time.
+
+Things that went well: reusing my old code. That was actually really cool to use my old SW.h file as a reference for these files. I think it's pretty easy to see the bones of the Star Wars game you had us make earlier in the semester in my final. The linked list also worked really nicely.
+
+Things that didn't go well: reusing my old code. I realized how much of a mess my old SW.h file actually was, so I had to clean that up quite a bit to get it in a cleaner state.
+
+
+
+Thank you, Bergen. Have a great trip in China. I hope I run into you again.

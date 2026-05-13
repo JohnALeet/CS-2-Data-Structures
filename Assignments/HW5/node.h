@@ -29,8 +29,8 @@ Node<T1>::Node()
 // template <class T1>
 // Node<T1>::~Node()
 // {
-//     if(_left != nullptr) delete _left;
-//     if(_right != nullptr) delete _right;
+//      if(_left != nullptr) delete _left;
+//      if(_right != nullptr) delete _right;
 // }
 
 template <class T1>

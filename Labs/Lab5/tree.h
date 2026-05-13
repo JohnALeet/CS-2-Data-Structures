@@ -172,7 +172,7 @@ void BST<T1>::inOrderPrint(Node<T1>* root)
         return;
     }
     inOrderPrint(root->getLeft());
-    cout << root->getData() << " ";
+    std::cout << root->getData() << " ";
     inOrderPrint(root->getRight());
 }
 
@@ -205,7 +205,7 @@ Node<T1>* BST<T1>::insertNode(Node<T1>* root, T1 data)
     }
     else 
     {
-        cout << data << "Value already exists.\n" << endl;
+        std::cout << data << "Value already exists.\n" << std::endl;
     }
     return root;
 }

@@ -11,8 +11,10 @@ class BST
     Node<T1>* searchData(Node<T1>*, T1);
     Node<T1>* removeData(Node<T1>*, T1);
     Node<T1>* minVal(Node<T1>*);
+    void destroyTree(Node<T1>*);
 
     public:
+    BST();
     void insert(T1);
     void inOrder();
     bool search(T1);
@@ -21,17 +23,32 @@ class BST
     ~BST();
 };
 
+//constructor
+template <class T1>
+BST<T1>::BST()
+{
+    _root = nullptr;
+}
+
 // Destructor, should check if root exists and then delete it. Each node will handle deleting its leaf nodes.
 template <class T1>
 BST<T1>::~BST()
 {
-    if (_root != nullptr)
-    {
-        delete _root;
-    }
-    
+    destroyTree(_root);
 }
+template <class T1>
+void BST<T1>::destroyTree(Node<T1>* root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
 
+    destroyTree(root->getLeft());
+    destroyTree(root->getRight());
+
+    delete root;
+}
 // Public method that takes in some data and passes that into the removeData method. Don't forget to update _root as you may end up deleting the original root.
 template <class T1>
 void BST<T1>::remove(T1 data)
@@ -51,6 +68,7 @@ Node<T1>* BST<T1>::removeData(Node<T1>* root, T1 data)
     {
         return nullptr;
     }
+
     if (data < root->getData())
     {
         root->setLeft(removeData(root->getLeft(), data));
@@ -59,28 +77,29 @@ Node<T1>* BST<T1>::removeData(Node<T1>* root, T1 data)
     {
         root->setRight(removeData(root->getRight(), data));
     }
-    else 
+    else
     {
         if (root->getLeft() == nullptr)
         {
             Node<T1>* temp = root->getRight();
-            root ->setRight (nullptr);
             delete root;
-            delete temp;
+            return temp;
         }
 
         else if (root->getRight() == nullptr)
         {
             Node<T1>* temp = root->getLeft();
-            root ->setLeft (nullptr);
             delete root;
-            delete temp;
+            return temp;
         }
-        Node<T1>* temp = minVal(root->getRight());
-        root->setData(temp->getData());
-        root->setRight(removeData(root->getRight(), temp->getData()));
 
+        Node<T1>* temp = minVal(root->getRight());
+
+        root->setData(temp->getData());
+
+        root->setRight(removeData(root->getRight(), temp->getData()));
     }
+
     return root;
 }
 
@@ -137,7 +156,7 @@ void BST<T1>::inOrderPrint(Node<T1>* root)
         return;
     }
     inOrderPrint(root->getLeft());
-    cout << root->getData() << " ";
+    std::cout << root->getData() << " ";
     inOrderPrint(root->getRight());
 }
 
@@ -160,18 +179,22 @@ Node<T1>* BST<T1>::insertNode(Node<T1>* root, T1 data)
         temp->setData(data);
         return temp;
     }
-    if (data < root ->getData())
+
+    if (data < root->getData())
     {
         root->setLeft(insertNode(root->getLeft(), data));
     }
-    else if (data > root ->getData())
+    else if (data > root->getData())
     {
         root->setRight(insertNode(root->getRight(), data));
     }
     else 
     {
-        cout << data << "Value already exists.\n" << endl;
+        T1 temp = root->getData();
+        temp++;
+        root->setData(temp);
     }
+
     return root;
 }
 

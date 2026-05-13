@@ -140,15 +140,45 @@ Any dead cell with exactly three live neighbors becomes a live cell, as if by re
 
 Return if you updated cells or not to break out of while loop from main.
 */
+
 bool updateCellState(Cell* board[][10], int boardSize) 
 {
-    // for ( int row = 0 ; row < boardSize; row++ ){
-    //     for ()
+    bool changed = false;
 
-    /*If state >  1, die if state <2 die, return something when true, we  */
+    for (int row = 0; row < boardSize; row++)
+    {
+        for (int col = 0; col < boardSize; col++)
+        {
+            findNumNeighbors(board, boardSize, board[row][col]);
+        }
+    }
 
-    // }
-    //Fill with funny logic that does stuff
+    for (int row = 0; row < boardSize; row++)
+    {
+        for (int col = 0; col < boardSize; col++)
+        {
+            int oldState = board[row][col]->state;
+            int neighbors = board[row][col]->numLiveNeighbors;
 
-    return false;
+            if (oldState == 1 && neighbors < 2)
+            {
+                board[row][col]->state = 0;
+            }
+            else if (oldState == 1 && neighbors > 3)
+            {
+                board[row][col]->state = 0;
+            }
+            else if (oldState == 0 && neighbors == 3)
+            {
+                board[row][col]->state = 1;
+            }
+
+            if (board[row][col]->state != oldState)
+            {
+                changed = true;
+            }
+        }
+    }
+
+    return changed;
 }
