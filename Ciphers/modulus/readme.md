@@ -1,0 +1,5 @@
+This was meant to be an exercise in dissecting modular arithmetic. I wanted to show the various stages of integer decomposition that take place under mod rings.
+Observe that all mods form a ring on algebra. The mod ring satisfies commutativity and associativity, there is addition, additive inverses, an additive element zero, multiplication, (which satisifies commutativity as well) and multiplicative inverses which return us back to mod identity where a = 1 mod n.
+All mod rings take place in the domain of integers such that Z/nZ for every x in the domain of n.
+However, if a mod ring is prime, it takes place on a ring, but it also takes place on a field.
+On the prime field of n, all integers smaller than 0 to n are invertible. Z/pZ = {1,2,3... P-1} maps cleanly into a bijective function, allowing invertibility. This produces intresting qualities to the field, like standard division without needing to invert identities.
